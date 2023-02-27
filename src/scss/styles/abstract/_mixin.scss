@@ -1,0 +1,83 @@
+// displays
+@mixin flex($gap) { 
+    display: flex; 
+    gap: $gap;
+}
+
+@mixin flexCenter{
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexJustifyBetween {
+    justify-content: space-between;
+    align-items: center;
+}
+
+// borders
+@mixin equalBorderRadius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+@mixin borderRadiusSpecific($topLeft, $topRight, $bottomRight, $bottomLeft) {
+    border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+    -webkit-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+    -moz-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+    -ms-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+    -o-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+}
+
+@mixin borderRadiusCircle{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+// transitions
+@mixin easeTransition($property, $time, $cubicBezier){
+    transition: $property $time $cubicBezier;
+    -webkit-transition: $property $time $cubicBezier;
+    -moz-transition: $property $time $cubicBezier;
+    -ms-transition: $property $time $cubicBezier;
+    -o-transition: $property $time $cubicBezier;
+}
+
+// transforms
+@mixin rotateTransform($rotate){
+    transform: rotate($rotate);
+    -webkit-transform: rotate($rotate);
+    -moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+}
+
+@mixin transformMoveBoxX($translate) {
+    transform: translateX($translate);
+    -webkit-transform: translateX($translate);
+    -moz-transform: translateX($translate);
+    -ms-transform: translateX($translate);
+    -o-transform: translateX($translate);
+}
+
+@mixin transformMoveBoxY($translate) {
+    transform: translateY($translate);
+    -webkit-transform: translateY($translate);
+    -moz-transform: translateY($translate);
+    -ms-transform: translateY($translate);
+    -o-transform: translateY($translate);
+}
+
+// box shadow
+@mixin boxShadow {
+    box-shadow: 0px 0px 12px -5px rgba(66, 194, 255, 1);
+}
+
+@mixin boxShadowY {
+    box-shadow: 0px 3px 10px -4px rgba(66, 194, 255, 1);
+}
