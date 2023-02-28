@@ -1,0 +1,115 @@
+// Styles - Desktop <= 1440px
+.header{
+    // General styles
+    width: 550px;
+    height: 185px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px 30px;
+    @include flex(30px);
+    @include equalBorderRadius(10px);
+    @include boxShadow();
+    backdrop-filter: blur(2px);
+    
+    // Card of presentation
+    .card_photo-figure{
+        width: 140px;
+        height: 140px;
+
+        .card-photo{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include borderRadiusCircle();
+        }
+    }
+    
+    // Texts of the card
+    .presentation-texts{
+        @include flex(0);
+        flex-direction: column;
+        
+        .presentation-title{
+            background: $title-header;
+            background-clip: initial;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            font-size: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .presentation-name{
+            height: 70px;
+            padding-top: 8px;
+            font-size: 22px;
+            color: $name-color;
+            letter-spacing: 1px;
+        }
+
+        .regards{
+            @include flex(8px);
+            width: max-content;
+            background: linear-gradient(to right, #f12711, #f5af19);
+            background-clip: initial;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+// Styles - Mobile <= 450px
+@media screen and (max-width: 450px){
+    .header{
+        // General styles
+        width: 85vw;
+        height: max-content;
+        padding: 30px 20px 20px 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        // Card of presentation
+        .card_photo-figure{
+            width: 150px;
+            height: 150px;
+        }
+        
+        // Texts of the card
+        .presentation-texts{
+            .regards{
+                align-self: center;
+            }
+        }
+    }
+}
+
+// Styles - Mobile <= 390px
+@media screen and (max-width: 390px){
+    .header{
+        // Texts of the card
+        .presentation-texts{
+            .presentation-title{ font-size: 21px; }
+
+            .presentation-name{ font-size: 17px; }
+
+            .regards{ font-size: 14px; }
+        }
+    }
+}
+
+// Styles - Mobile <= 340px
+@media screen and (max-width: 340px){
+    .header{
+        // Texts of the card
+        .presentation-texts{
+            .presentation-title{
+                font-size: 19px;
+            }
+        }
+    }
+}

@@ -11,5 +11,6 @@ export default async function changeLanguage(language:string){
 
             text.textContent = response[section][value];
         }
+        return response
     }catch(e){console.log(e)}
 }

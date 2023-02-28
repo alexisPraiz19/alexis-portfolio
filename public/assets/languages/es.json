@@ -5,5 +5,8 @@
         "projects": "proyectos",
         "about": "sobre mi",
         "contact": "contacto"
+    },
+    "header": {
+        "role": "Desarrollador Front-end"
     }
 }

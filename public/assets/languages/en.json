@@ -5,5 +5,8 @@
         "projects": "projects",
         "about": "about",
         "contact": "contact"
+    },
+    "header": {
+        "role": "Front-end Development"
     }
 }

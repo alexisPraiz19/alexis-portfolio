@@ -9,9 +9,10 @@
     @include flex(50px);
     @include flexJustifyBetween();
     flex-wrap: wrap;
+    z-index: 10;
     .hamburger-icon{ display: none; } 
     .menu-icon{
-        color: #8BBCCC;
+        color: $primary-color;
         font-size: 24px;
     }
 
@@ -22,8 +23,8 @@
         @include flex(0);
         @include flexCenter();
         font-size: 20px;
-        color: #B8FFF9;
-        border: 1px solid #8BBCCC;
+        color: $secondary-color;
+        border: 1px solid $primary-color;
         @include borderRadiusCircle();
         @include boxShadow();
         @include easeTransition(all, .3s, ease);
@@ -69,7 +70,7 @@
                 @include flexCenter();
                 text-decoration: none;
                 text-transform: uppercase;
-                color: #8BBCCC;
+                color: $primary-color;
                 letter-spacing: .5px;
                 @include equalBorderRadius(5px);
                 @include easeTransition(transform, .1s, ease);
