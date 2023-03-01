@@ -4,7 +4,7 @@
     position: sticky;
     top: 0;
     width: 100vw;
-    height: 80px;
+    height: 85px;
     padding: 0 90px;
     @include flex(50px);
     @include flexJustifyBetween();
@@ -13,13 +13,13 @@
     .hamburger-icon{ display: none; } 
     .menu-icon{
         color: $primary-color;
-        font-size: 24px;
+        font-size: 28px;
     }
 
     // menu - animated icon
     .menu-icon_container{
-        width: 45px;
-        height: 45px;
+        width: 52px;
+        height: 52px;
         @include flex(0);
         @include flexCenter();
         font-size: 20px;
@@ -132,6 +132,8 @@
 @media screen and (max-width: 450px){
     .menu{
         //menu - general styles
+        height: 85px;
+        padding-top: 0;
         @include flexJustifyBetween();
         .hamburger-icon{ display: block; } 
 
@@ -161,12 +163,10 @@
             }
 
             .menu-li{ 
-                order: 0; 
-                
+                order: 0;        
                 .menu-link{
                     padding-left: 0;
                     gap: 7px;
-                    font-size: 15px;
                 }
             }
         }

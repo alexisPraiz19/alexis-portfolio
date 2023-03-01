@@ -2,7 +2,7 @@
 .header{
     // General styles
     width: 550px;
-    height: 185px;
+    height: 200px;
     margin: 0 auto;
     margin-top: 50px;
     padding: 20px 30px;
@@ -13,8 +13,8 @@
     
     // Card of presentation
     .card_photo-figure{
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
 
         .card-photo{
             width: 100%;
@@ -28,6 +28,7 @@
     .presentation-texts{
         @include flex(0);
         flex-direction: column;
+        justify-content: center;
         
         .presentation-title{
             background: $title-header;
@@ -72,12 +73,6 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        
-        // Card of presentation
-        .card_photo-figure{
-            width: 150px;
-            height: 150px;
-        }
         
         // Texts of the card
         .presentation-texts{
