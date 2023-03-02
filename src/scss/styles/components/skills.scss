@@ -5,7 +5,8 @@
     height: max-content;
     margin: 110px auto 0 auto;
     padding: 30px;
-    background: url("./assets/skills/bg-desktop-skills.jpg") fixed;
+    background-image: url("./skills/bg-desktop-skills.jpg");
+    background-attachment: fixed;
     background-size: cover;
     @include equalBorderRadius(20px);
 
@@ -13,30 +14,32 @@
         @extend .neon-text;
         text-align: center;
         margin-bottom: 40px;
+        text-decoration: underline;
     }
-
+    
+    // Slider container styles
     .slider{
-        width: 100%;
-
+        position: relative; 
+        max-width: 400px;
+        height: max-content;
+        margin: 0 auto;
+        @include boxShadow();
+        @include equalBorderRadius(10px);
+        background-color: #0004;
+        backdrop-filter: blur(2px);
+        overflow: hidden;
+        
         .slide{
-            position: relative;
-            width: 400px;
-            height: max-content;
-            margin: 0 auto;
+            width: 800%;  
+            margin-left: -100%; 
             display: flex;
-            overflow: hidden;
-            @include boxShadow();
-            @include equalBorderRadius(10px);
-            background-color: #0004;
-            backdrop-filter: blur(2px);
 
             .card{
-                min-width: 100%;
+                width: 100%;
                 padding: 35px 0;
                 @include flex(30px);
                 flex-direction: column;
                 @include flexCenter();
-                @include easeTransition(margin-left, .2s, ease);
 
                 .logo-skill_figure{
                     text-align: center;
@@ -52,6 +55,7 @@
                         margin-top: 10px;
                         font-size: 24px;
                         font-weight: 700;
+                        text-transform: none;
                     }
                 }
 
@@ -88,6 +92,28 @@
             .btn-slide_left{ left: 15px; }
     
             .btn-slide_right{ right: 15px; }
+        }
+        
+        // TS interactive styles
+        .slide-right{
+            margin-left: -200%;
+            @include easeTransition(margin-left, .2s, ease);
+        }
+
+        .slide-left{
+            margin-left: 0;
+            @include easeTransition(margin-left, .2s, ease);
+        }
+    }
+}
+
+// Styles - Mobile 450px;
+@media screen and (max-width: 450px){
+    .skills{
+        width: 100vw;
+
+        .slider{
+            width: 90%;
         }
     }
 }

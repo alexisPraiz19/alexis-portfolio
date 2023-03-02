@@ -11,7 +11,7 @@ export default function SlideLi({ skillUrlLogo, tech , detailsOf }:any): JSX.Ele
       </figure>
 
       <button className="details-button">
-        <Link to={`/read-details/${detailsOf}`} className="read-details_link">read details</Link>
+        <Link to={`/read-details/${detailsOf}`} className="read-details_link" data-section="skills" data-value="details">read details</Link>
       </button>
     </li>
   );

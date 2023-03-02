@@ -8,5 +8,9 @@
     },
     "header": {
         "role": "Front-end Development"
+    },
+    "skills": {
+        "title": "skills",
+        "details": "read details"
     }
 }
