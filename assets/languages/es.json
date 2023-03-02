@@ -8,5 +8,9 @@
     },
     "header": {
         "role": "Desarrollador Front-end"
+    },
+    "skills": {
+        "title": "habilidades",
+        "details": "leer detalles"
     }
 }
