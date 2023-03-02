@@ -1,0 +1,93 @@
+// Styles - Desktop 1440px;
+.skills{
+    // General styles
+    width: 96vw;
+    height: max-content;
+    margin: 110px auto 0 auto;
+    padding: 30px;
+    background: url("./assets/skills/bg-desktop-skills.jpg") fixed;
+    background-size: cover;
+    @include equalBorderRadius(20px);
+
+    .skill-title{ 
+        @extend .neon-text;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .slider{
+        width: 100%;
+
+        .slide{
+            position: relative;
+            width: 400px;
+            height: max-content;
+            margin: 0 auto;
+            display: flex;
+            overflow: hidden;
+            @include boxShadow();
+            @include equalBorderRadius(10px);
+            background-color: #0004;
+            backdrop-filter: blur(2px);
+
+            .card{
+                min-width: 100%;
+                padding: 35px 0;
+                @include flex(30px);
+                flex-direction: column;
+                @include flexCenter();
+                @include easeTransition(margin-left, .2s, ease);
+
+                .logo-skill_figure{
+                    text-align: center;
+
+                    .logo-skill{
+                        width: 115px;
+                        height: auto;
+                        object-fit: cover;
+                    }
+
+                    .tech{
+                        @extend .neon-text;
+                        margin-top: 10px;
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+                }
+
+                .details-button{
+                    width: 80%;
+                    height: 45px;
+                    @extend .button-default;
+
+                    .read-details_link{
+                        width: 100%;
+                        height: 100%;
+                        @include flex(0);
+                        @include flexCenter();
+                        text-decoration: none;
+                        @extend .neon-text;
+                        font-size: 14px;
+
+                        &:hover{ text-decoration: underline; }
+                    }
+                }
+            }
+
+            .btn-slide{
+                position: absolute;
+                top: 50%;
+                @include transformMoveBoxY(-50%);
+                font-size: 24px;
+                color: $arrow-color;
+                cursor: pointer;
+
+                &:hover{ color: $arrow-color-hover; }
+            }
+    
+            .btn-slide_left{ left: 15px; }
+    
+            .btn-slide_right{ right: 15px; }
+        }
+    }
+}
