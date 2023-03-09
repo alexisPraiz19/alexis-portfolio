@@ -1,185 +1,210 @@
 // styles - desktop 1440px;
-.menu{
-    // menu - general styles
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    height: 85px;
-    padding: 0 90px;
-    @include flex(50px);
-    @include flexJustifyBetween();
+.menu {
+  // menu - general styles
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 85px;
+  padding: 0 90px;
+  @include flex(50px);
+  @include flexJustifyBetween();
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  z-index: 10;
+
+  .hamburger-icon { display: none; }
+
+  .menu-icon {
+    color: $primary-color;
+    font-size: 28px;
+  }
+
+  // menu - animated icon
+  .menu-icon_container {
+    width: 52px;
+    height: 52px;
+    @include flex(0);
+    @include flexCenter();
+    font-size: 20px;
+    color: $secondary-color;
+    border: 1px solid $primary-color;
+    @include borderRadiusCircle();
+    @include boxShadow();
+    @include easeTransition(all, 0.3s, ease);
+
+    .menu-icon { @include easeTransition(transform, 0.7s, ease); }
+
+    .my-name {
+      width: 0;
+      overflow: hidden;
+      letter-spacing: 0.7px;
+      @include easeTransition(all, 0.3s, ease);
+    }
+
+    &:hover {
+      width: 115px;
+      @include equalBorderRadius(15px);
+
+      .menu-icon { @include rotateTransform(360deg); }
+
+      .my-name {
+        width: 57px;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  // menu - links
+  .menu-links {
+    width: auto;
+    height: 100%;
+    @include flex(0);
+    @include flexCenter();
+    list-style: none;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    z-index: 10;
-    .hamburger-icon{ display: none; } 
-    .menu-icon{
+
+    .close-icon { display: none; }
+
+    .menu-li {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+      .menu-link {
+        padding: 5px 8px;
+        @include flex(3px);
+        @include flexCenter();
+        text-decoration: none;
+        text-transform: uppercase;
         color: $primary-color;
-        font-size: 28px;
+        letter-spacing: 0.5px;
+        @include equalBorderRadius(5px);
+        @include easeTransition(transform, 0.1s, ease);
+
+        &:hover {
+          @include transformMoveBoxY(-2px);
+          background: #aaa1;
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+        }
+      }
     }
 
-    // menu - animated icon
-    .menu-icon_container{
-        width: 52px;
-        height: 52px;
-        @include flex(0);
-        @include flexCenter();
-        font-size: 20px;
-        color: $secondary-color;
-        border: 1px solid $primary-color;
-        @include borderRadiusCircle();
-        @include boxShadow();
-        @include easeTransition(all, .3s, ease);
+    .flag-icons {
+      margin-right: 10px;
+      @include flex(8px);
+      @include flexCenter();
 
-        .menu-icon{ @include easeTransition(transform, .7s, ease) }
+      button {
+        width: 32px;
+        height: auto;
+        border: none;
+        background: transparent;
+        cursor: pointer;
 
-        .my-name{
-            width: 0;
-            overflow: hidden;
-            letter-spacing: .7px;
-            @include easeTransition(all, .3s, ease);
+        img {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+          @include equalBorderRadius(3px);
+          &:hover {
+            @include boxShadowY();
+          }
         }
-
-        &:hover{
-            width: 115px;
-            @include equalBorderRadius(15px);
-
-            .menu-icon{ @include rotateTransform(360deg) }
-            
-            .my-name{
-                width: 57px;
-                margin-left: 8px;
-            }
-        }
+      }
     }
-
-    // menu - links
-    .menu-links{
-        width: auto;
-        height: 100%;
-        @include flex(0);
-        @include flexCenter();
-        list-style: none;
-        flex-wrap: wrap;
-
-        .close-icon{ display: none }
-
-        .menu-li{
-            order: 1;
-            .menu-link{
-                padding: 5px 8px;
-                @include flex(3px);
-                @include flexCenter();
-                text-decoration: none;
-                text-transform: uppercase;
-                color: $primary-color;
-                letter-spacing: .5px;
-                @include equalBorderRadius(5px);
-                @include easeTransition(transform, .1s, ease);
-
-                &:hover{ 
-                    @include transformMoveBoxY(-2px);
-                    background: #aaa1;
-                    backdrop-filter: blur(10px);
-                }
-            }
-        }
-
-        .flag-icons{
-            margin-right: 10px;
-            @include flex(8px);
-            @include flexCenter();
-            
-
-            button{
-                width: 32px;
-                height: auto;
-                border: none;
-                background: transparent;
-                cursor: pointer;
-
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    @include equalBorderRadius(3px);
-                    &:hover{ @include boxShadowY(); }
-                }
-
-            }
-        }
-    }
+  }
 }
 
 // styles - desktop <= 1300px;
-@media screen and (max-width: 1300px){
-    .menu-links .menu-li .menu-link{
-        font-size: 16px;
-    }
+@media screen and (max-width: 1300px) {
+  .menu-links .menu-li .menu-link { font-size: 16px; }
 }
 
 // styles - tablet <= 830px;
-@media screen and (max-width: 830px){
-    .menu{
-        // menu - general styles;
-        height: max-content;
-        padding: 0 30px;
-        padding-top: 30px;
-        @include flexCenter();
-        gap: 15px;
-    }
+@media screen and (max-width: 830px) {
+  .menu {
+    // menu - general styles;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 0 30px;
+    padding-top: 30px;
+    @include flexCenter();
+    gap: 15px;
+  }
 }
 
 // styles - mobile <= 450px;
-@media screen and (max-width: 450px){
-    .menu{
-        //menu - general styles
-        height: 85px;
-        padding-top: 0;
-        @include flexJustifyBetween();
-        .hamburger-icon{ display: block; } 
-
-        // menu - links
-        .menu-links{
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 45vw;
-            height: 100vh;
-            padding: 65px 0 0 23px;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 15px;
-            background-color: #aaa1;
-            backdrop-filter: blur(5px);
-            clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
-            @include easeTransition(clip-path, .2s, ease);
-
-            .close-icon{ 
-                position: absolute;
-                top: 25px;
-                right: 20px;
-                display: block; 
-            }
-
-            .menu-li{ 
-                order: 0;        
-                .menu-link{
-                    padding-left: 0;
-                    gap: 7px;
-                }
-            }
-        }
-        
-        // interaction with TS
-        .menu-active{ clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+@media screen and (max-width: 450px) {
+  .menu {
+    //menu - general styles
+    height: 85px;
+    padding-top: 0;
+    @include flexJustifyBetween();
+    .hamburger-icon {
+      display: block;
     }
+
+    // menu - links
+    .menu-links {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45vw;
+      height: 100vh;
+      padding: 65px 0 0 23px;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      gap: 15px;
+      background-color: #aaa1;
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      -webkit-clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+      clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+      @include easeTransition(clip-path, 0.2s, ease);
+
+      .close-icon {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        display: block;
+      }
+
+      .menu-li {
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+        order: 0;
+        .menu-link {
+          padding-left: 0;
+          gap: 7px;
+        }
+      }
+    }
+
+    // interaction with TS
+    .menu-active {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
 }
 
 // styles - mobile <= 350px;
-@media screen and (max-width: 350px){
-    .menu .menu-links{ padding-left: 15px; }
-    .menu .menu-links .menu-li .menu-link{
-        font-size: 14px;
-    }
+@media screen and (max-width: 350px) {
+  .menu .menu-links { padding-left: 15px; }
+  
+  .menu .menu-links .menu-li .menu-link { font-size: 14px; }
 }

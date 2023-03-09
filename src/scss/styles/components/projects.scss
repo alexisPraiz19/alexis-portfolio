@@ -1,0 +1,115 @@
+// Styles desktop <= 1440px
+.projects {
+  // Container styles
+  position: relative;
+  width: 100vw;
+  margin: 150px 0;
+  display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  grid-template-areas:
+    ".        project1 .       "
+    "project2 project1 project3"
+    "project2 project4 project3"
+    ".        project4 .       ";
+  gap: 25px;
+
+  .project-title {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    @extend .neon-text;
+    text-decoration: underline;
+    @include transformMoveBoxX(-50%);
+  }
+
+  // Card styles
+  .project-card {
+    width: 270px;
+    padding: 15px 20px;
+    @include flex(15px);
+    @include flexCenter();
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    @include boxShadow();
+    @include equalBorderRadius(5px);
+    @include easeTransition(transform, 0.1s, ease);
+    &:hover { @include transformMoveBoxY(-3px); }
+
+    .fig-card {
+      width: 100%;
+      @extend .neon-text;
+      font-size: 9px;
+      text-align: center;
+
+      .project-img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        @include equalBorderRadius(5px);
+      }
+    }
+
+    .demo-code {
+      width: 100%;
+      height: 40px;
+      @include flex(5px);
+
+      .project-btn {
+        width: 50%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+
+        .link {
+          width: 100%;
+          height: 100%;
+          @include flex(0);
+          @include flexCenter();
+          @extend .neon-text;
+          background-color: #eee1;
+          -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+          letter-spacing: 1px;
+          text-decoration: none;
+          @include equalBorderRadius(5px);
+        }
+      }
+    }
+  }
+
+  // Card area
+  .project1 { grid-area: project1; }
+  .project2 { grid-area: project2; }
+  .project3 { grid-area: project3; }
+  .project4 { grid-area: project4; }
+}
+
+// Styles desktop <= 830px
+@media screen and (max-width: 830px) {
+  .projects {
+    width: 90vw;
+    margin: 150px auto 0 auto;
+    @include flex(20px);
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    .project-card { width: 300px; }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .projects {
+    width: 85vw;
+
+    .project-card {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+    }
+  }
+}

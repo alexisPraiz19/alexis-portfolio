@@ -1,110 +1,139 @@
 // Styles - Desktop <= 1440px
-.header{
-    // General styles
-    width: 550px;
-    height: 200px;
-    margin: 0 auto;
-    margin-top: 50px;
-    padding: 20px 30px;
-    @include flex(30px);
-    @include equalBorderRadius(10px);
-    @include boxShadow();
-    backdrop-filter: blur(2px);
-    
-    // Card of presentation
-    .card_photo-figure{
-        width: 160px;
-        height: 160px;
+.header {
+  // General styles
+  width: 550px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px 30px;
+  @include flex(30px);
+  @include equalBorderRadius(10px);
+  @include boxShadow();
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 
-        .card-photo{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            @include borderRadiusCircle();
-        }
+  // Card of presentation
+  .card_photo-figure {
+    width: 160px;
+    height: 160px;
+
+    .card-photo {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      @include borderRadiusCircle();
     }
-    
-    // Texts of the card
-    .presentation-texts{
-        @include flex(0);
-        flex-direction: column;
-        justify-content: center;
-        
-        .presentation-title{
-            background: $title-header;
-            background-clip: initial;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            font-size: 25px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
+  }
 
-        .presentation-name{
-            height: 70px;
-            padding-top: 8px;
-            font-size: 22px;
-            color: $name-color;
-            letter-spacing: 1px;
-        }
+  // Texts of the card
+  .presentation-texts {
+    @include flex(0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 
-        .regards{
-            @include flex(8px);
-            width: max-content;
-            background: linear-gradient(to right, #f12711, #f5af19);
-            background-clip: initial;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            text-transform: uppercase;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 2px;
-        }
+    .presentation-title {
+      background: $title-header;
+      background-clip: initial;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
+
+    .presentation-name {
+      height: 70px;
+      padding-top: 8px;
+      font-size: 22px;
+      color: $name-color;
+      letter-spacing: 1px;
+    }
+
+    .regards {
+      @include flex(8px);
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#f12711),
+        to(#f5af19)
+      );
+      background: -o-linear-gradient(left, #f12711, #f5af19);
+      background: linear-gradient(to right, #f12711, #f5af19);
+      background-clip: initial;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+  }
 }
 
 // Styles - Mobile <= 450px
-@media screen and (max-width: 450px){
-    .header{
-        // General styles
-        width: 85vw;
-        height: max-content;
-        padding: 30px 20px 20px 20px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        
-        // Texts of the card
-        .presentation-texts{
-            .regards{
-                align-self: center;
-            }
-        }
+@media screen and (max-width: 450px) {
+  .header {
+    // General styles
+    width: 85vw;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 30px 20px 20px 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+
+    // Card of presentation
+    .card_photo-figure {
+      width: 190px;
+      height: 190px;
     }
+
+    // Texts of the card
+    .presentation-texts {
+      .regards {
+        -ms-flex-item-align: center;
+        align-self: center;
+      }
+    }
+  }
 }
 
 // Styles - Mobile <= 390px
-@media screen and (max-width: 390px){
-    .header{
-        // Texts of the card
-        .presentation-texts{
-            .presentation-title{ font-size: 21px; }
+@media screen and (max-width: 390px) {
+  .header {
+    // Texts of the card
+    .presentation-texts {
+      .presentation-title { font-size: 21px; }
 
-            .presentation-name{ font-size: 17px; }
+      .presentation-name { font-size: 17px; }
 
-            .regards{ font-size: 14px; }
-        }
+      .regards { font-size: 14px; }
     }
+  }
 }
 
 // Styles - Mobile <= 340px
-@media screen and (max-width: 340px){
-    .header{
-        // Texts of the card
-        .presentation-texts{
-            .presentation-title{
-                font-size: 19px;
-            }
-        }
+@media screen and (max-width: 340px) {
+  .header {
+    // Texts of the card
+    .presentation-texts {
+      .presentation-title { font-size: 19px; }
     }
+  }
 }
