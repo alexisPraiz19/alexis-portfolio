@@ -3,15 +3,16 @@
   // Container styles
   position: relative;
   width: 100vw;
-  margin: 150px 0;
+  margin-top: 150px;
+  padding-bottom: 150px;
   display: grid;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   grid-template-areas:
     ".        project1 .       "
-    "project2 project1 project3"
-    "project2 project4 project3"
+    "project2 project5 project3"
+    "project2 project5 project3"
     ".        project4 .       ";
   gap: 25px;
 
@@ -88,28 +89,50 @@
   .project2 { grid-area: project2; }
   .project3 { grid-area: project3; }
   .project4 { grid-area: project4; }
+  .project5 { grid-area: project5; }
+
+  // wave svg
+  .wave-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 130px;
+    overflow: hidden;
+    background-color: transparent;
+
+    .wave{
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 // Styles desktop <= 830px
 @media screen and (max-width: 830px) {
   .projects {
-    width: 90vw;
     margin: 150px auto 0 auto;
-    @include flex(20px);
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    padding: 0 30px 150px 30px;
+    grid-template-areas:
+    "project1 project2"
+    "project3 project4"
+    "project5 project5";
 
-    .project-card { width: 300px; }
+    .project-card { width: 100%; }
   }
 }
 
 @media screen and (max-width: 620px) {
   .projects {
-    width: 85vw;
+    @include flex(25px);
+    flex-wrap: wrap;
 
-    .project-card {
-      -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-    }
+    .wave-container{ height: 110px;}
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects {
+    .wave-container{ height: 100px;}
   }
 }

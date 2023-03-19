@@ -7,7 +7,7 @@
   height: max-content;
   margin: 110px auto 0 auto;
   padding: 30px;
-  background-image: url("./skills/bg-desktop-skills.jpg");
+  background-image: url("/assets/skills/bg-desktop-skills.jpg");
   background-attachment: fixed;
   background-size: cover;
   @include equalBorderRadius(20px);
@@ -122,7 +122,7 @@
 @media screen and (max-width: 450px) {
   .skills {
     width: 100vw;
-    background-image: url("./skills/bg-mobile-skills.jpg");
+    background-image: url("/assets/skills/bg-mobile-skills.jpg");
 
     .slider { width: 90%; }
   }

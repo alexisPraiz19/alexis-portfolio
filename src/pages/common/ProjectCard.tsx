@@ -21,7 +21,7 @@ export default function ProjectCard({langs, urlImage, demo, code, cardClass}:Car
 
             <div className="demo-code">
                 <button className="demo project-btn">
-                   <Link to={demo} target="_blank" className="link">demo</Link>
+                   <Link to={demo} target="_blank" className="link" data-section="projects" data-value="demo">demo</Link>
                 </button>
 
                 <button className="code project-btn">

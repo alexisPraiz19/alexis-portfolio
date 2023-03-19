@@ -14,7 +14,7 @@ export default function Header(){
                     Front-end development
                 </h2>
 
-                <span className="presentation-name">Alexis Leonel Praiz</span>
+                <span className="presentation-name">Alexis Praiz</span>
 
                 <p  className="regards">
                     ¡Hello 

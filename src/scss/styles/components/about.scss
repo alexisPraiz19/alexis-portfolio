@@ -1,0 +1,68 @@
+// Estilos para desktop <= 1440px
+.about{
+    // Estilos del contenedor principal
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    padding: 30px;
+    padding-bottom: 150px;
+    display: grid;
+    gap: 45px;
+    background: -o-linear-gradient(top, #171717, #043d049e);
+    background: -webkit-gradient(linear, left top, left bottom, from(#171717), to(#043d049e));
+    background: linear-gradient(to bottom, #171717, #043d049e);
+    color: $about-text;
+    
+    // Estilos del contenido
+    .notification{
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        padding: 10px;
+        background-color: #aaa1;
+        border: 1px solid #E97777;
+        border-radius: 5px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: #aaa9;
+
+        &:hover{ background-color: #aaa2; }
+    }
+
+    .about-text{
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 8px;
+        text-align: center;
+        line-height: 1.2;
+        letter-spacing: .5px;
+        border-bottom: 1px solid #006300;
+
+        .about-text_title{
+            display: inline-block;
+            margin-bottom: 15px;
+            @extend .neon-text;
+        }
+    }
+}
+
+// Estilos para desktop <= 830px
+@media screen and (max-width: 830px){
+    // Estilos del contenedor principal
+    .about{
+        // Estilos del contenido
+        .notification{ width: 100%; }
+        .about-text{ width: 90%; }
+    }
+}
+
+// Estilos para desktop <= 480px
+@media screen and (max-width: 480px){
+    // Estilos del contenedor principal
+    .about{
+        // Estilos del contenido
+        .about-text{ width: 100%; }
+    }
+}
