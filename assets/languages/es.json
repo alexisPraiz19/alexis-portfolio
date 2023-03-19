@@ -12,5 +12,21 @@
     "skills": {
         "title": "habilidades",
         "details": "leer detalles"
+    },
+    "projects": {
+        "title": "proyectos",
+        "demo": "ver"
+    },
+    "about": {
+        "notification": "Esta sección se realiza con el fin de dar a conocer el tipo de persona que utilizará o considerará.",
+        "basic_dates": "datos básicos",
+        "name": "Nombre Completo: Alexis Leonel Praiz",
+        "age": "Edad: 19 años",
+        "birthday": "Fecha de cumpleaños: 20 de mayo",
+        "location": "Ubicación: Argentina, Buenos Aires",
+        "hobbie-title": "pasa tiempo",
+        "hobbie-text": "Estudiar nuevos conceptos de programación, practicar Piano, estudiar Inglés, leer e interpretar el código de otras personas a través de videos educativos en YouTube, jugar videojuegos.",
+        "personality-title": "personalidad",
+        "personality-text": "Muy dedicado y cumplidor, responsable, paciente, amable, buena relación con los compañeros, introvertido, productivo, siempre busco progresar a nivel personal y profesional, en general me considero bastante competente aunque a veces me da el famoso 'síndrome del impostor' pero no me dejo ganar"
     }
 }
