@@ -28,5 +28,10 @@
         "hobbie-text": "Studying new programming concepts, practice Piano, study English, read and interpret other people's code through educational videos on YouTube, play videogames.",
         "personality-title": "personality",
         "personality-text": "Very dedicated and dutiful, responsible, patient, kind, good relationship with colleagues, introverted, productive, I always seek to progress on a personal and professional level, in general I consider myself quite competent although sometimes I get the famous 'impostor syndrome' but I don't I let myself win"
+    },
+    "footer":{
+        "tools": "Tools",
+        "contact": "Contact",
+        "preference": "<preference>"
     }
 }
