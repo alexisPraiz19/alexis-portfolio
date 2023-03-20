@@ -5,7 +5,7 @@ export default async function changeLanguage(language:string){
         const response    = await requestJson.json();
 
         for(let i in textToChange){
-            let text = textToChange[i] as HTMLSpanElement;
+            let text = textToChange[i] as HTMLElement;
             let section:string = text.dataset.section!;
             let value:string   = text.dataset.value!;
 
