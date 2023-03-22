@@ -1,0 +1,64 @@
+{
+    "tech":[
+        {
+            "id": "html",
+            "concepts": [
+                "Forms","Basic structure of a form","Various types of inputs",
+                "Most common form attributes","Links", "Tables", "Content structuring tags",
+                "Multimedia", "Meta Tags", "Figure", "Iframes"
+            ]
+        },
+        {
+            "id": "css",
+            "concepts": [
+                "Specification and cascade", "Select types", "CSS variables", "Flex box", "Grid",
+                "Aligning elements with Flex and Grid",
+                "Object fit & position", "Text stylization", "Relative and absolute measurements",
+                "Position (relative, absolute, fixed, sicky)", "Box-shadow", "Text-alignment", "Overflow",
+                "Borders", "Pseudo-classes and elements", "Box model", "Basic concepts of Animations",
+                "Transitions", "Background", "Filter"
+            ]
+        },
+        {
+            "id": "js",
+            "concepts": [
+                "Conditionals", "Basic and intermediate operators", "Variables", "Object creation",
+                "Loops and Iteration", "Traditional functions and arrows", "Array methods", "String methods",
+                "Math object", "ClassList and its methods", "Dynamic creation of elements", "Children methods",
+                "Sibling Methods", "Parent Methods", "Getting and Modifying Children/Siblings",
+                "Mouse Events", "Keyboard Events", "Interface Events", "Event Stream", "Timers",
+                "Try Catch", "Async & await", "Regular Expressions", "Handling JSON files", "FETCH Requests",
+                "Apis consumption", "Local Storage", "Session Storage", "Object Date"
+            ]
+        },
+        {
+            "id": "react",
+            "concepts": [
+                "Basics concepts", "Components", "Imports and Exports", "DOM Events",
+                "Basic Hooks", "useEffect", "useState", "useContext", "React Router", "Browsing with React Router",
+                "Hash Link"
+            ]
+        },
+        {
+            "id": "sass",
+            "concepts": [
+                "Nesting Selectors", "Extended Classes", "Mixin and Functions", "SASS Syntax", "Variables",
+                "Operators", "Installation with NPM"
+            ]
+        },
+        {
+            "id": "typescript",
+            "concepts": [
+                "Classes and Interfaces", "Unions Enum", "typed", "Functions", "Type assertion",
+                "TypeScript Basics"
+            ]
+        },
+        {
+            "id": "git",
+            "concepts": [
+                "GIT Basics", "Commands", "Init", "Add", "Commit",
+                "Remote add origin", "pull", "push", "clone", "checkout", "log", "revert"
+            ]
+        }
+    ]
+}
