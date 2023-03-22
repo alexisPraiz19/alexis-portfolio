@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import ReadDetails from '../pages/components/ReadDetails';
 import "../scss/index.scss";
 
 // Routes
@@ -10,6 +11,10 @@ const router = createHashRouter([
   {
     path: "/",
     element: <App/>
+  },
+  {
+    path: "/read-details/:skill",
+    element: <ReadDetails/>
   }
 ]);
 

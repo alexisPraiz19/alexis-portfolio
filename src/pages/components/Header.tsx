@@ -1,10 +1,13 @@
 // Tools
 import { useEffect } from 'react';
+
+// Componente de efecto máquina de escribir
 import TypeWriterEffect from '../common/TypeWriterEffect';
 
-export default function Header(){
+// Componente principal de exportación
+export default function Header(): JSX.Element{
     return (
-        <header className="header">
+        <header className="header" id="home">
             <figure className="card_photo-figure">
                 <img src="./assets/others/profile-photo.jpg" alt="card-photo" className="card-photo"/>
             </figure>

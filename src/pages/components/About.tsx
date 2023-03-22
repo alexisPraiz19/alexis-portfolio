@@ -1,17 +1,17 @@
-// Common component
+// Common component para reutilizar código
 import AboutText from "../common/AboutText";
 
-// Componente de exportación
+// Componente principal de exportación
 export default function About(): JSX.Element{
   return (
-    <section className="about">
-        {/* notificación */}
+    <section className="about" id="about">
+      {/* notificación */}
       <p className="notification" data-section="about" data-value="notification">
         This section is made in order to make known the type of person
         that you will use or consider.
       </p>
       
-        {/* este "about text" es diferente a los demás porque este no es un componente y es direrente en cuanto estructura. Tuve que hacerlo así para más facilidad a la hora de estilizar en sass */}
+      {/* este "about text" es diferente a los demás porque este no es un componente y es direrente en cuanto estructura. Tuve que hacerlo así para más facilidad a la hora de estilizar en sass */}
       <div className="about-text">
         <span className="about-text_title" data-section="about" data-value="basic_dates">basic dates</span>
         <p className="about-text_p">
@@ -22,7 +22,7 @@ export default function About(): JSX.Element{
         </p>
       </div>
         
-        {/* common component para reutilizar código */}
+      {/* common component para reutilizar código */}
       <AboutText 
         title     = "hobbies"
         paragraph = "Studying new programming concepts, practice Piano, study English, read and interpret other people's code through educational videos on YouTube, play videogames."

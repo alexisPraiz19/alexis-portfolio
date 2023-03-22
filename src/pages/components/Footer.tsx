@@ -1,4 +1,4 @@
-// Icon
+// Icons
 import { FaTools } from "react-icons/fa";
 import { SiVite } from "react-icons/si";
 import {TbBrandVscode } from "react-icons/tb";
@@ -11,29 +11,33 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FaWhatsapp } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 
+
+// Componente principal de exportación
 export default function Footer(): JSX.Element {
   return (
     <footer className="footer" id="footer">
+      {/* Lista de herramientas */}
       <div className="tools">
         <h3><span data-section="footer" data-value="tools">Tools</span> <FaTools/></h3>
 
         <ul className="tools-ul">
-          <li><SiVite className="icon"/> Vite</li>
-          <li><TbBrandVscode className="icon"/> Visual Studio Code</li>
-          <li><BiGitBranch className="icon"/> Git Graph</li>
-          <li><FaFolder className="icon"/> Material Icons</li>
-          <li><FaAutoprefixer className="icon"/> Auto Prefixer</li>
-          <li><SiPrettier className="icon"/> Prettier</li>
+          <li><SiVite/> Vite</li>
+          <li><TbBrandVscode/> Visual Studio Code</li>
+          <li><BiGitBranch/> Git Graph</li>
+          <li><FaFolder/> Material Icons</li>
+          <li><FaAutoprefixer/> Auto Prefixer</li>
+          <li><SiPrettier/> Prettier</li>
         </ul>
       </div>
-
+      
+      {/* Lista de contacto */}
       <div className="contact">
         <h3><span data-section="footer" data-value="contact">Contact</span> <AiFillPhone/></h3>
 
         <ul className="contact-ul">
-          <li><HiOutlineMail className="icon"/> alexispraiz18@gmail.com <span data-section="footer" data-value="preference">&#60;preference&#62;</span></li>
-          <li><FaWhatsapp className="icon"/> +54 1160461511</li>
-          <li><a href="https://github.com/alexisPraiz19" target="_blank"><AiFillGithub className="icon"/> alexisPraiz19</a></li>
+          <li><HiOutlineMail/> alexispraiz18@gmail.com <span data-section="footer" data-value="preference">&#60;preference&#62;</span></li>
+          <li><FaWhatsapp/> +54 1160461511</li>
+          <li><a href="https://github.com/alexisPraiz19" target="_blank"><AiFillGithub/> alexisPraiz19</a></li>
         </ul>
       </div>
     </footer>

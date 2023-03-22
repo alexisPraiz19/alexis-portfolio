@@ -12,8 +12,14 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   z-index: 10;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  -webkit-box-shadow: 0px 3px 8px -5px rgba(66, 194, 255, 0.5);
+  box-shadow: 0px 3px 8px -5px rgba(66, 194, 255, 0.5);
 
-  .hamburger-icon { display: none; }
+  .hamburger-icon {
+    display: none;
+  }
 
   .menu-icon {
     color: $primary-color;
@@ -22,31 +28,21 @@
 
   // menu - animated icon
   .menu-icon_container {
-    width: 52px;
-    height: 52px;
-    @include flex(0);
-    @include flexCenter();
-    font-size: 20px;
-    color: $secondary-color;
-    border: 1px solid $primary-color;
-    @include borderRadiusCircle();
-    @include boxShadow();
-    @include easeTransition(all, 0.3s, ease);
-
-    .menu-icon { @include easeTransition(transform, 0.7s, ease); }
-
+    @include container();
+    .menu-icon {
+      @include easeTransition(transform, 0.7s, ease);
+    }
     .my-name {
-      width: 0;
-      overflow: hidden;
-      letter-spacing: 0.7px;
-      @include easeTransition(all, 0.3s, ease);
+      @include myName();
     }
 
     &:hover {
       width: 115px;
       @include equalBorderRadius(15px);
 
-      .menu-icon { @include rotateTransform(360deg); }
+      .menu-icon {
+        @include rotateTransform(360deg);
+      }
 
       .my-name {
         width: 57px;
@@ -65,22 +61,16 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 
-    .close-icon { display: none; }
+    .close-icon {
+      display: none;
+    }
 
     .menu-li {
       -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
       order: 1;
       .menu-link {
-        padding: 5px 8px;
-        @include flex(3px);
-        @include flexCenter();
-        text-decoration: none;
-        text-transform: uppercase;
-        color: $primary-color;
-        letter-spacing: 0.5px;
-        @include equalBorderRadius(5px);
-        @include easeTransition(transform, 0.1s, ease);
+        @include link();
 
         &:hover {
           @include transformMoveBoxY(-2px);
@@ -92,35 +82,16 @@
     }
 
     .flag-icons {
-      margin-right: 10px;
-      @include flex(8px);
-      @include flexCenter();
-
-      button {
-        width: 32px;
-        height: auto;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-
-        img {
-          width: 100%;
-          height: 100%;
-          -o-object-fit: cover;
-          object-fit: cover;
-          @include equalBorderRadius(3px);
-          &:hover {
-            @include boxShadowY();
-          }
-        }
-      }
+      @include flags();
     }
   }
 }
 
 // styles - desktop <= 1300px;
 @media screen and (max-width: 1300px) {
-  .menu-links .menu-li .menu-link { font-size: 16px; }
+  .menu-links .menu-li .menu-link {
+    font-size: 16px;
+  }
 }
 
 // styles - tablet <= 830px;
@@ -169,7 +140,7 @@
       -ms-flex-pack: start;
       justify-content: flex-start;
       gap: 15px;
-      background-color: #aaa1;
+      background-color: #262630;
       -webkit-backdrop-filter: blur(5px);
       backdrop-filter: blur(5px);
       -webkit-clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
@@ -204,7 +175,11 @@
 
 // styles - mobile <= 350px;
 @media screen and (max-width: 350px) {
-  .menu .menu-links { padding-left: 15px; }
-  
-  .menu .menu-links .menu-li .menu-link { font-size: 14px; }
+  .menu .menu-links {
+    padding-left: 15px;
+  }
+
+  .menu .menu-links .menu-li .menu-link {
+    font-size: 14px;
+  }
 }

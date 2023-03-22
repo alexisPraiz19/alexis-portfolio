@@ -1,16 +1,17 @@
-// Tools
+// Herramientas
 import { useEffect } from 'react';
 
 // Icons
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
-// Common component
+// Common component para ahorrar código
 import SlideLi from '../common/SlideLi';
 
 // TS logic
-import { slideLeft, slideRight } from "../../typescript/slider"
+import { slideLeft, slideRight } from "../../typescript/slider";
 
+// Componente principal de exportación
 export default function Skills(){
   useEffect(()=>{
     const slideContainer:Element          = document.querySelector(".slide")!;
@@ -21,7 +22,7 @@ export default function Skills(){
   });
   
   return (
-    <section className="skills">
+    <section className="skills" id="skills">
       <h2 className="skill-title" data-section="skills" data-value="title">Skills</h2>
         <div className="slider">
           {/*skill list*/}
@@ -73,6 +74,7 @@ export default function Skills(){
               skillUrlLogo = "./assets/skills/skill-github.png"
               detailsOf    = "github"
               tech         = "GitHub"
+              display      = "display"
             />
 
             <BsFillArrowLeftCircleFill className="btn-slide btn-slide_left" onClick={()=> slideLeft()}/>

@@ -1,0 +1,243 @@
+// Estilos para desktop <= 1440px
+.read-details {
+  // Estilos del contenedor principal
+  width: 100vw;
+  height: auto;
+
+  // Estilos del contenido
+  .read-details_content {
+    width: 100%;
+    height: 100%;
+
+    // Secondary menu
+    .menu-read_container {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      padding: 0 90px;
+      @include flex(0);
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      -webkit-box-shadow: 0px 3px 8px -5px rgba(66, 194, 255, 0.5);
+      box-shadow: 0px 3px 8px -5px rgba(66, 194, 255, 0.5);
+      z-index: 10;
+
+      // menu - icono animado
+      .menu-icon_container {
+        @include container();
+        .menu-icon {
+          @include easeTransition(transform, 0.7s, ease);
+        }
+        .my-name {
+          @include myName();
+        }
+
+        &:hover {
+          width: 115px;
+          @include equalBorderRadius(15px);
+
+          .menu-icon {
+            @include rotateTransform(360deg);
+          }
+
+          .my-name {
+            width: 57px;
+            margin-left: 8px;
+          }
+        }
+      }
+
+      // menu - cambiar lenguaje
+      .change-language {
+        @include flags();
+
+        .menu-link {
+          @include link();
+
+          &:hover {
+            @include transformMoveBoxY(-2px);
+            background: #aaa1;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+          }
+        }
+      }
+    }
+
+    // Contenido principal
+    .details-container {
+      width: 100%;
+      height: auto;
+      margin-top: 90px;
+      display: grid;
+      gap: 60px;
+
+      .details-content {
+        // Contenedor
+        width: 60%;
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+        margin: 0 auto;
+        padding: 25px 35px;
+        @include flex(0);
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 25px;
+        @include boxShadow();
+        @include equalBorderRadius(10px);
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+
+        // Figure y logo
+        .detail-figure {
+          width: 110px;
+          height: auto;
+          text-align: center;
+
+          .detail-caption {
+            @extend .neon-text;
+          }
+
+          .detail-image {
+            width: 100%;
+            margin-top: 8px;
+          }
+        }
+
+        // Lista de conceptos
+        .concepts-container {
+          width: 100%;
+          @include flex(0);
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-column-gap: 10px;
+          -moz-column-gap: 10px;
+          column-gap: 10px;
+          row-gap: 8px;
+          list-style: none;
+          color: #9eb3b9;
+
+          li {
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            border-bottom: 2px solid #43accf4c;
+          }
+        }
+      }
+
+      // Estilos del contenedor del link que envía a mi registro
+      .doc-container {
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        padding: 25px 35px;
+        display: grid;
+        gap: 20px;
+        text-align: center;
+        @include boxShadow();
+        @include equalBorderRadius(10px);
+        color: #9eb3b9;
+
+        .link-folder {
+          max-width: -webkit-max-content;
+          max-width: -moz-max-content;
+          max-width: max-content;
+          margin: 0 auto;
+          padding: 10px 15px;
+          @extend .neon-text;
+          font-size: 14.5px;
+          border: 1px solid #87f6ed;
+          @include equalBorderRadius(5px);
+          letter-spacing: 2px;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+}
+
+// Estilos para desktop <= 1200px
+@media screen and (max-width: 1200px) {
+  // Estilos del contenedor principal
+  .read-details {
+    // Estilos del contenido
+    .read-details_content {
+      .details-container {
+        .details-content {
+          width: 70%;
+        }
+        // Estilos del contenedor del link que envía a mi registro
+        .doc-container {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+// Estilos para tablets <= 830px
+@media screen and (max-width: 830px) {
+  // Estilos del contenedor principal
+  .read-details {
+    // Estilos del contenido
+    .read-details_content {
+      // Secondary menu
+      .menu-read_container {
+        padding: 0 50px;
+      }
+
+      // Contenido principal
+      .details-container {
+        .details-content {
+          width: 85%;
+        }
+        // Estilos del contenedor del link que envía a mi registro
+        .doc-container {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+
+// Estilos para mobile <= 480px
+@media screen and (max-width: 480px) {
+  // Estilos del contenedor principal
+  .read-details {
+    // Estilos del contenido
+    .read-details_content {
+      // Secondary menu
+      .menu-read_container {
+        padding: 0 30px;
+      }
+
+      // Contenido principal
+      .details-container {
+        .details-content {
+          padding: 25px 20px;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+
+          .concepts-container {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,83 +1,142 @@
 // displays
-@mixin flex($gap) { 
-    display: flex; 
-    gap: $gap;
+@mixin flex($gap) {
+  display: flex;
+  gap: $gap;
 }
 
-@mixin flexCenter{
-    justify-content: center;
-    align-items: center;
+@mixin flexCenter {
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flexJustifyBetween {
-    justify-content: space-between;
-    align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 // borders
 @mixin equalBorderRadius($radius) {
-    border-radius: $radius;
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
 }
 
 @mixin borderRadiusSpecific($topLeft, $topRight, $bottomRight, $bottomLeft) {
-    border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
-    -webkit-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
-    -moz-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
-    -ms-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
-    -o-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+  border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+  -webkit-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+  -moz-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+  -ms-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
+  -o-border-radius: $topLeft, $topRight, $bottomRight, $bottomLeft;
 }
 
-@mixin borderRadiusCircle{
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+@mixin borderRadiusCircle {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 // transitions
-@mixin easeTransition($property, $time, $cubicBezier){
-    transition: $property $time $cubicBezier;
-    -webkit-transition: $property $time $cubicBezier;
-    -moz-transition: $property $time $cubicBezier;
-    -ms-transition: $property $time $cubicBezier;
-    -o-transition: $property $time $cubicBezier;
+@mixin easeTransition($property, $time, $cubicBezier) {
+  transition: $property $time $cubicBezier;
+  -webkit-transition: $property $time $cubicBezier;
+  -moz-transition: $property $time $cubicBezier;
+  -ms-transition: $property $time $cubicBezier;
+  -o-transition: $property $time $cubicBezier;
 }
 
 // transforms
-@mixin rotateTransform($rotate){
-    transform: rotate($rotate);
-    -webkit-transform: rotate($rotate);
-    -moz-transform: rotate($rotate);
-    -ms-transform: rotate($rotate);
-    -o-transform: rotate($rotate);
+@mixin rotateTransform($rotate) {
+  transform: rotate($rotate);
+  -webkit-transform: rotate($rotate);
+  -moz-transform: rotate($rotate);
+  -ms-transform: rotate($rotate);
+  -o-transform: rotate($rotate);
 }
 
 @mixin transformMoveBoxX($translate) {
-    transform: translateX($translate);
-    -webkit-transform: translateX($translate);
-    -moz-transform: translateX($translate);
-    -ms-transform: translateX($translate);
-    -o-transform: translateX($translate);
+  transform: translateX($translate);
+  -webkit-transform: translateX($translate);
+  -moz-transform: translateX($translate);
+  -ms-transform: translateX($translate);
+  -o-transform: translateX($translate);
 }
 
 @mixin transformMoveBoxY($translate) {
-    transform: translateY($translate);
-    -webkit-transform: translateY($translate);
-    -moz-transform: translateY($translate);
-    -ms-transform: translateY($translate);
-    -o-transform: translateY($translate);
+  transform: translateY($translate);
+  -webkit-transform: translateY($translate);
+  -moz-transform: translateY($translate);
+  -ms-transform: translateY($translate);
+  -o-transform: translateY($translate);
 }
 
 // box shadow
 @mixin boxShadow {
-    box-shadow: 0px 0px 12px -5px rgba(66, 194, 255, 1);
+  box-shadow: 0px 0px 12px -5px rgba(66, 194, 255, 1);
 }
 
 @mixin boxShadowY {
-    box-shadow: 0px 3px 10px -4px rgba(66, 194, 255, 1);
+  -webkit-box-shadow: 0px 3px 10px -4px rgba(66, 194, 255, 1);
+  box-shadow: 0px 3px 10px -4px rgba(66, 194, 255, 1);
+}
+
+// Estilos de componentes del menu principal y secundario
+@mixin container {
+  width: 52px;
+  height: 52px;
+  @include flex(0);
+  @include flexCenter();
+  font-size: 20px;
+  color: $secondary-color;
+  border: 1px solid $primary-color;
+  @include borderRadiusCircle();
+  @include boxShadow();
+  @include easeTransition(all, 0.3s, ease);
+}
+
+@mixin myName {
+  width: 0;
+  overflow: hidden;
+  letter-spacing: 0.7px;
+  @include easeTransition(all, 0.3s, ease);
+}
+
+@mixin link {
+  padding: 5px 8px;
+  @include flex(3px);
+  @include flexCenter();
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $primary-color;
+  letter-spacing: 0.5px;
+  @include equalBorderRadius(5px);
+  @include easeTransition(transform, 0.1s, ease);
+}
+
+@mixin flags {
+  margin-right: 10px;
+  @include flex(8px);
+  @include flexCenter();
+
+  button {
+    width: 32px;
+    height: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      @include equalBorderRadius(3px);
+      &:hover {
+        @include boxShadowY();
+      }
+    }
+  }
 }
