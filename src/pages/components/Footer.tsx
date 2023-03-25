@@ -36,7 +36,7 @@ export default function Footer(): JSX.Element {
 
         <ul className="contact-ul">
           <li><HiOutlineMail/> alexispraiz18@gmail.com <span data-section="footer" data-value="preference">&#60;preference&#62;</span></li>
-          <li><FaWhatsapp/> +54 1160461511</li>
+          <li><a href="https://wa.me/541160461511"><FaWhatsapp/> +54 1160461511</a></li>
           <li><a href="https://github.com/alexisPraiz19" target="_blank"><AiFillGithub/> alexisPraiz19</a></li>
         </ul>
       </div>
